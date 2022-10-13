@@ -1,0 +1,3 @@
+[submodule "libs/Manifold.Tiled"]
+	path = libs/Manifold.Tiled
+	url = ../Manifold.Tiled.git
