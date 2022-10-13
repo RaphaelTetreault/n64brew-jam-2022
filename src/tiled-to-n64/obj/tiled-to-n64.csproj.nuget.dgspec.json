@@ -1,0 +1,126 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\github\\n64brew-jam-2022\\src\\tiled-to-n64\\tiled-to-n64.csproj": {}
+  },
+  "projects": {
+    "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\Manifold.Tiled.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\Manifold.Tiled.csproj",
+        "projectName": "Manifold.Tiled",
+        "projectPath": "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\Manifold.Tiled.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\github\\n64brew-jam-2022\\src\\tiled-to-n64\\tiled-to-n64.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\github\\n64brew-jam-2022\\src\\tiled-to-n64\\tiled-to-n64.csproj",
+        "projectName": "tiled-to-n64",
+        "projectPath": "D:\\github\\n64brew-jam-2022\\src\\tiled-to-n64\\tiled-to-n64.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\n64brew-jam-2022\\src\\tiled-to-n64\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\Manifold.Tiled.csproj": {
+                "projectPath": "D:\\github\\n64brew-jam-2022\\libs\\Manifold.Tiled\\src\\Manifold.Tiled\\Manifold.Tiled\\Manifold.Tiled.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CommandLineParser": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
