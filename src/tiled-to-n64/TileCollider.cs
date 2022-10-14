@@ -8,7 +8,7 @@
 
         public void Write(StreamWriter writer)
         {
-            writer.Write($"0x{layer:X2}{height:X2}");
+            writer.Write($"0x{height:X2}{layer:X2},");
         }
     }
 }

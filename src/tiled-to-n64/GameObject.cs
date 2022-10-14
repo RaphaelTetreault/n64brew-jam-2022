@@ -11,12 +11,12 @@
 
         public void Write(StreamWriter writer)
         {
-            writer.Write("{");
-            writer.Write($"0x{id:X2}, ");
-            writer.Write($"0x{unk:X2}, ");
-            writer.Write($"{px:0.}f, ");
-            writer.Write($"{py:0.}f, ");
-            writer.Write($"{pz:0.}f");
+            writer.Write("\t{");
+            writer.Write($"0x{id:X2},");
+            writer.Write($"0x{unk:X2},{{");
+            writer.Write($"{px:0.0}f,");
+            writer.Write($"{py:0.0}f,");
+            writer.Write($"{pz:0.0}f");
             writer.Write("}},");
         }
     }
