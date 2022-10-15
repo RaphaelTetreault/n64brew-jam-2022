@@ -58,6 +58,11 @@ namespace TiledToN64
             {
                 "player" => (byte)ActorID.player,
                 "gate3" => (byte)ActorID.gate3,
+                "button" => 0x80,
+                "switch" => 0x80,
+                "switch2" => 0x80,
+                "obj" => 0x80,
+                "gem" => 0x80,
                 _ => throw new NotImplementedException(@object.Class),
             };
             return actorID;

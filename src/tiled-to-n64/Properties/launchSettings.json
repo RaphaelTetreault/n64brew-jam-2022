@@ -2,7 +2,7 @@
   "profiles": {
     "tiled-to-n64": {
       "commandName": "Project",
-      "commandLineArgs": "-i D:/desktop/n64brew-jam2022/sample3.tmx -o D:/desktop/n64brew-jam2022/n64brew.txt"
+      "commandLineArgs": "-i D:/github/n64brew-jam-2022/tiled/level.tmx -o D:/github/n64brew-jam-2022/tiled/level.txt"
     }
   }
 }
