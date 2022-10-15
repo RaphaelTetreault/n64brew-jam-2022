@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="41" height="147" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="10">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="41" height="147" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="23">
  <tileset firstgid="1" source="basic-collision.tsx"/>
  <tileset firstgid="5" source="number-grid-16.tsx"/>
+ <objectgroup id="5" name="labels">
+  <object id="12" x="49.1667" y="1721.17" width="83" height="19">
+   <text wrap="1">ai-1</text>
+  </object>
+  <object id="13" x="357.167" y="1723.17" width="83" height="19">
+   <text wrap="1">ai-2</text>
+  </object>
+  <object id="14" x="6.5" y="1400.5" width="83" height="19">
+   <text wrap="1">I2</text>
+  </object>
+  <object id="15" x="217.167" y="1402.5" width="83" height="19">
+   <text wrap="1">H</text>
+  </object>
+  <object id="16" x="454.5" y="1403.17" width="83" height="19">
+   <text wrap="1">G</text>
+  </object>
+  <object id="17" x="43.1667" y="1127.17" width="83" height="19">
+   <text wrap="1">F</text>
+  </object>
+  <object id="18" x="96.5" y="861.833" width="83" height="19">
+   <text wrap="1">C</text>
+  </object>
+  <object id="19" x="365.167" y="831.167" width="83" height="19">
+   <text wrap="1">D</text>
+  </object>
+  <object id="20" x="203.833" y="497.167" width="83" height="19">
+   <text wrap="1">E</text>
+  </object>
+  <object id="21" x="195.167" y="12.5" width="83" height="19">
+   <text wrap="1">END</text>
+  </object>
+  <object id="22" x="122.5" y="1947.83" width="83" height="19">
+   <text wrap="1">INTRO</text>
+  </object>
+ </objectgroup>
  <objectgroup id="2" name="actors">
   <object id="2" name="gate0" class="gate3" x="312" y="2200">
    <point/>
