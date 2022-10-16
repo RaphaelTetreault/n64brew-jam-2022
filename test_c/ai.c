@@ -24,10 +24,10 @@ struct ai_state {
     int idle_rem_wait_frames;       // How many frames remaining for AI to wait.
     int patrol_waypoint_count;      // Number of waypoints.
     int patrol_waypoint_index;      // Current waypoint index.
-    float patrol_vision_radius;     // 
-    float patrol_move_speed;        // 
+    float patrol_vision_radius;     // Vision radius of AI when patrolling.
+    float patrol_move_speed;        // Speed of AI when patrolling.
     ai_waypoint patrol_waypoints[8];// Waypoints. Maximum of 8.
-    float chase_move_speed;         // 
+    float chase_move_speed;         // Speed of AI when chasing player.
     player *chase_player_state;     // Pointer to player, for chasing.
 };
 
