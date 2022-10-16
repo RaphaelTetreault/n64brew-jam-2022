@@ -34,13 +34,13 @@ struct ai_state {
 // Initialize AI
 // CONSIDER: moving some stats into own struct? Allow defining different things for different AI.
 void ai_state_init(ai_state *state){
-    ai_state.active_state = ai_state_type.none;
-    active_state.idle_max_wait_frames = 30;
-    active_state.idle_rem_wait_frames = 0;
-    active_state.patrol_waypoint_count = 0;
-    active_state.patrol_move_speed = 3f;
-    active_state.patrol_vision_radius = 5f;
-    active_state.patrol_waypoints = {
+    state->active_state = ai_state_type.none;
+    state->idle_max_wait_frames = 30;
+    state->idle_rem_wait_frames = 0;
+    state->patrol_waypoint_count = 0;
+    state->patrol_move_speed = 3f;
+    state->patrol_vision_radius = 5f;
+    state->patrol_waypoints = {
         { .position = {0,0} },
         { .position = {0,0} },
         { .position = {0,0} },
@@ -50,28 +50,28 @@ void ai_state_init(ai_state *state){
         { .position = {0,0} },
         { .position = {0,0} },
     };
-    active_state.chase_move_speed = 4f;
-    active_state.chase_player_state = NULL;
+    state->chase_move_speed = 4f;
+    state->chase_player_state = NULL;
 }
 
 // Init call for IDLE state
 void ai_set_state_idle(ai_state *state){
     // Set state flag
-    ai_state.active_state = ai_state_type.idle;
+    state->active_state = ai_state_type.idle;
     // Set number of frames AI will idle for.
-    ai_state.idle_rem_wait_frames = ai_state.idle_max_wait_frames;
+    state->idle_rem_wait_frames = ai_state->idle_max_wait_frames;
 }
 // IDLE
 void ai_idle(ai_state *state){
     // Sanity check.
-    bool is_valid_state = ai_state.active_state == ai_state_type.idle;
+    bool is_valid_state = state->active_state == ai_state_type.idle;
     if (!is_valid_state)
         assert("Assert: trying to call state IDLE from another state.");
     // Decrement wait time
-    ai_state.idle_rem_wait_frames--;
+    state->idle_rem_wait_frames--;
     // Change state if no longer required to idle.
     // Transition to patrol state
-    bool is_done_waiting = ai_state.idle_rem_wait_frames <= 0;
+    bool is_done_waiting = state->idle_rem_wait_frames <= 0;
     if (is_done_waiting)
         ai_set_state_patrol(state);
 }
@@ -79,12 +79,12 @@ void ai_idle(ai_state *state){
 // 
 void ai_set_state_patrol(ai_state *state){
     // Set state flag
-    ai_state.active_state = ai_state_type.patrol;
+    state.active_state = ai_state_type.patrol;
 }
 // 
 void ai_patrol(ai_state *state){
     // Sanity check.
-    bool is_valid_state = ai_state.active_state == ai_state_type.patrol;
+    bool is_valid_state = state->active_state == ai_state_type.patrol;
     if (!is_valid_state)
         assert("Assert: trying to call state PATROL from another state.");
     // Vision check 
@@ -94,8 +94,8 @@ void ai_patrol(ai_state *state){
         ai_set_state_chase(state);
     } else {
         // Get current waypoint
-        int waypoint_index = ai_state.patrol_waypoint_index;
-        waypoint w = ai_state.waypoints[current];
+        int waypoint_index = state->patrol_waypoint_index;
+        waypoint w = state->waypoints[current];
         // Move AI towards waypoint
         // TODO
     }
@@ -104,12 +104,12 @@ void ai_patrol(ai_state *state){
 //
 void ai_set_state_chase(ai_state *state){
     // Set state flag
-    ai_state.active_state = ai_state_type.chase;
+    state->active_state = ai_state_type.chase;
 }
 // 
 void ai_chase(ai_state *state){
     // Sanity check.
-    bool is_valid_state = ai_state.active_state == ai_state_type.chase;
+    bool is_valid_state = state->active_state == ai_state_type.chase;
     if (!is_valid_state)
         assert("Assert: trying to call state CHASE from another state.");
     bool can_see_player = ai_vision_check(state);
@@ -124,7 +124,9 @@ void ai_chase(ai_state *state){
     }
 }
 
-void ai_move(ai_state *state, vec2d direction)
+void ai_move(ai_state *state, vec2d direction){
+    // TODO
+}
 
 bool ai_vision_check(ai_state *state){
     // Sanity check.
@@ -132,11 +134,11 @@ bool ai_vision_check(ai_state *state){
     if (!has_player_reference)
         assert("Assert: trying to check null PLAYER_STATE in AI vision check.");    
     // Distance check from AI to player (squared, not with square root)
-    float vision_radius = state.active_state == ai_state_type.chase
-        ? ai_state.vision_radius + 1.0f     // Pad vision so AI doesn't flicker between states
-        : ai_state.vision_radius;           // Use regular vision distance
+    float vision_radius = state->active_state == ai_state_type.chase
+        ? state->vision_radius + 1.0f     // Pad vision so AI doesn't flicker between states
+        : state->vision_radius;           // Use regular vision distance
     float max_distance_squared = vision_radius * vision_radius;
-    float distance_squared = vec2d_distance_squared(state.position, state.chase_player_state);
+    float distance_squared = vec2d_distance_squared(state->position, state->chase_player_state->position);
     bool is_within_range = distance_squared < max_distance_squared;
     if (is_within_range){
         // Do a more refined check (ie: check tiles between AI and player for wall.)
@@ -177,18 +179,18 @@ struct input_state{
 };
 
 // player
-void player_move(player_state player, input_state input){
+void player_move(player_state *player, input_state *input){
 
 }
 
-void player_move_carry(player_state player, input_state input){
+void player_move_carry(player_state *player, input_state *input){
 
 }
 
-void player_throw(player_state player, input_state input){
+void player_throw(player_state *player, input_state *input){
 
 }
 
-void player_death(player_state player, input_state input){
+void player_death(player_state *player, input_state *input){
 
 }
