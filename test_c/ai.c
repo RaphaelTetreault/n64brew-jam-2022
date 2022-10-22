@@ -8,16 +8,17 @@ enum ai_state_type{
     idle,
     patrol,
     chase,
+    dead,
 }
 
 // AI waypoint (where to move, how long to stay there)
-struct ai_waypoint {
+typedef struct ai_waypoint {
     vec2d position;
     int wait_time_frames;
 };
 
 // Struct to hold all information about AI state.
-struct ai_state {
+typedef struct ai_state {
     vec2d position;
     ai_state_type active_state;     // Which state AI is currently in.
     int idle_max_wait_frames;       // How long to idle, in frames.
@@ -29,6 +30,10 @@ struct ai_state {
     ai_waypoint patrol_waypoints[8];// Waypoints. Maximum of 8.
     float chase_move_speed;         // Speed of AI when chasing player.
     player *chase_player_state;     // Pointer to player, for chasing.
+    bool chase_forever;             // True if the AI should always chase (after stealing item).
+    bool is_dead;                   // True is AI is dead.
+    bool can_respawn;               // True if AI can respawn.
+    vec2d respawn_location;         // Location to respawn, if applicable.
 };
 
 // Initialize AI
@@ -126,6 +131,7 @@ void ai_chase(ai_state *state){
 
 void ai_move(ai_state *state, vec2d direction){
     // TODO
+    // move AI in direction with proper collision check
 }
 
 bool ai_vision_check(ai_state *state){
@@ -170,11 +176,11 @@ vec2d vec2d_sub(vec2d a, vec2d b){
 
 
 
-struct player_state{
+typedef struct player_state{
     vec2d position;
 };
 
-struct input_state{
+typedef struct input_state{
 
 };
 
